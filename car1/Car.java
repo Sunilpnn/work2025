@@ -10,43 +10,24 @@ Steering st;
 
 
 	public Car(){
-	
-    d[0]= new Door();
-	d[0].name= "fRight";
-	
-    d[1]= new Door();
-	d[1].name= "fLeft";
-	
-	d[2]= new Door();
-	d[2].name= "bLeft";
-	
-	d[3] = new Door();
-	d[3].name= "bRight";
+		
+	String[]names = new String[]{"fRight","fLfet","bRight","bLeft"};	
+	for (int i =0;i<4;i++){
+    d[i]= new Door(names[i]);
 	
 	
+	}
 	
-	t[0] = new Tyre();
-	t[0].brand="MRF";
-	t[0].size=20;
+	for (int i =0;i<4;i++){
+    t[i]= new Tyre("MRF",15);
 	
-	t[1] = new Tyre();
-	t[1].brand="MRF";
-	t[1].size=20;
 	
-	t[2] = new Tyre();
-	t[2].brand="MRF";
-	t[2].size=20;
-	
-	t[3] = new Tyre();
-	t[3].brand="MRF";
-	t[3].size=20;
-	
+	}
 	
 	
 	st = new Steering();
     st.name="Power Steering";
     st.size=15;	
-	
 	
 	name="BMW";
 	color="RED";
@@ -57,22 +38,15 @@ Steering st;
 public void carDetails(){
 	
 	
-	System.out.println("Car name :"+name);
-	System.out.println("Car color:"+color);
+	System.out.println("Car name :"+ name+ "\n" +"Car color:"+color);
 	
-	System.out.println("Door :"+d[0].name + "\n" + "Door :"+ d[1].name + "\n" + "Door :"+ d[2].name + "\n" +"Door :"+ d[3].name + "\n");
-     
-	System.out.println("Tyre 1 :"+t[0].brand);
-	System.out.println("Tyre 1:"+t[0].size);
-	
-	System.out.println("Tyre 2:"+t[1].brand);
-	System.out.println("Tyre 2:"+t[1].size);
-	
-	System.out.println("Tyre 3:"+t[2].brand);
-	System.out.println("Tyre 3:"+t[2].size);
-	
-	System.out.println("Tyre 4:"+t[3].brand);
-	System.out.println("Tyre 4:"+t[3].size);
+	for(int i=0;i<4;i++){
+	System.out.println("Door :"+d[i].name );
+	}
+    for (int i=0;i<6;i++){
+	System.out.println("Tyre :"+t[i].brand);
+	System.out.println("Tyre :"+t[i].size);
+	 }
 	
 	
 	System.out.println("Steering :"+st.name);
@@ -83,5 +57,7 @@ public void carDetails(){
 	
 	
 }
+
+
 
 }
