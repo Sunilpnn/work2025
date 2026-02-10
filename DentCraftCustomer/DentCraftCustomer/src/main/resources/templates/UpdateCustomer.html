@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+
+/* Body background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+}
+
+input[type="reset"] {
+    background: #dc3545;
+    color: white;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<form th:action="@{/customers/updateCustomer/{id}(id=${customer.id})}" 
+      th:object="${customer}" 
+      method="post">
+
+<h2>Update The Customer Details</h2>
+
+
+<input type="hidden" th:field="*{id}" />
+
+<input type="text" th:field="*{name}" placeholder="Update Your Name"/>
+
+<input type="number" th:field="*{age}" placeholder="Enter Age"/>
+
+<input type="email" th:field="*{email}" placeholder="Enter Email"/>
+
+<input type="tel" th:field="*{phone}" placeholder="Phone"/>
+
+<input type="submit" value="Update"/>
+<input type="reset" value="Clear"/>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Customer Data</title>
+
+<style>
+
+/* 🌈 Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* 🧊 Glass Card */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 16px;
+}
+
+th {
+    background: rgba(255,255,255,0.2);
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.15);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Customer Database</h2>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Update</th>
+</tr>
+
+<tr th:each="c : ${customers}">
+    
+<td th:text="${c.id}"></td>
+<td th:text="${c.name}"></td>
+<td th:text="${c.age}"></td>
+<td th:text="${c.email}"></td>
+<td th:text="${c.phone}"></td>
+
+
+<td>
+    <a th:href="@{/customers/edit/{id}(id=${c.id})}" class="btn btn-primary">
+        Update Customers
+    </a>
+</td>
+
+
+
+</tr>
+
+</table>
+
+<div style="margin-top: 15px; text-align: center;">
+            <a th:href="@{/customers/home}" style="text-decoration: none; color: #3267a0; font-weight: bold;">← Back to Home</a>
+        </div>
+
+
+<div style="margin-top: 15px; text-align: center;">
+            <a th:href="@{/customers/register}" style="text-decoration: none; color: #3267a0; font-weight: bold;">← Back to Register Customer</a>
+        </div>
+
+</div>
+
+
+</body>
+</html>

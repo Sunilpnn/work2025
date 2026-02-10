@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospital Management System</title>
+
+<style>
+
+/* Background */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Glass Card */
+.glass-box {
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.glass-box h1 {
+    font-size: 28px;
+}
+
+.glass-box p {
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-primary {
+    background: #00c6ff;
+    color: black;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+.btn {
+            display: inline-block; /* 2. This makes the link act like a real button */
+            text-decoration: none;
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div> DentCraft Hospital</div>
+    <div>
+        <a href="#">Home</a>
+       
+         <a th:href="@{/customers/register}" class="btn btn-primary">Register Customers</a>
+
+         <a th:href="@{/customers/edit}" class="btn btn-primary">Update  Customers</a>
+
+
+        <a href="#">Appointments</a>
+
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="glass-box">
+        
+        <h1>Welcome to Hospital Management System</h1>
+       
+       <a th:href="@{/customers/viewAll}" class="btn btn-primary">View Customers</a>
+    </div>
+</div>
+
+</body>
+</html>
